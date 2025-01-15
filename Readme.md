@@ -1,7 +1,7 @@
-# Interview Scheduler App
+# SCHEDULO - Interview Scheduler App
 
 ## Overview
-The Interview Scheduler App is designed to streamline the process of scheduling interviews. It allows users to create, manage, and track interview appointments efficiently.
+The Interview Scheduler App is designed to streamline the process of scheduling interviews. It allows Hr's to create, manage, and track interview appointments efficiently.
 
 ## Features
 - User authentication and authorization
