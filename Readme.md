@@ -6,9 +6,7 @@ The Interview Scheduler App is designed to streamline the process of scheduling 
 ## Features
 - User authentication and authorization
 - Create, edit, and delete interview schedules
-- View all scheduled interviews in a calendar view
-- Notifications and reminders for upcoming interviews
-- Integration with Google Calendar
+- View all scheduled interviews
 
 ## Installation
 1. Clone the repository:
@@ -16,7 +14,7 @@ The Interview Scheduler App is designed to streamline the process of scheduling 
   git clone https://github.com/swappy-sutar/Schedulo.git
   ```
 
-- for Backend 
+### for Backend 
   
 2. Navigate to the project directory:
   ```bash
@@ -27,7 +25,7 @@ The Interview Scheduler App is designed to streamline the process of scheduling 
   npm install
   ```
 
-- for Frontend 
+### for Frontend 
 
 4. Navigate to the project directory:
   ```bash
