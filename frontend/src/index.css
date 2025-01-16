@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CustomCalendar.css */
+.custom-calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #161D29; /* Sleek gradient */
+  border: 2px solid #ffd700; /* Gold border */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+.custom-calendar {
+  width: 100%;
+  max-width: 600px; /* Adjust size */
+  border: none;
+  font-family: 'Poppins', sans-serif; /* Modern typography */
+  background: #1e1e1e; /* Dark background */
+  color: #e0e0e0; /* Subtle text color */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.react-calendar__tile {
+  text-align: center;
+  padding: 15px;
+  background: transparent;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  transition: all 0.3s ease-in-out;
+}
+
+.react-calendar__tile:hover {
+  background-color: #ffd700; /* Gold highlight */
+  color: #000;
+  transform: scale(1.1); /* Interactive scale */
+}
+
+.react-calendar__tile--active {
+  background-color: #ffae00; /* Rich gold active */
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 174, 0, 0.5); /* Active glow */
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #424854; /* Dark navigation bar */
+  color: #ffd700; /* Gold text */
+  border-radius: 20px 20px 0 0;
+  font-weight: bold;
+}
+
+.react-calendar__navigation button {
+  color: #ffd700;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.react-calendar__navigation button:hover {
+  color: #ffae00; /* Brighter gold hover */
+  transform: scale(1.2);
+}
+
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffd700;
+  padding: 10px 0;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #ff8080; /* Highlight weekends */
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #a0a0a0; /* Faded color for other months */
+}
+
+.react-calendar__tile--now {
+  background-color: #ffd700; /* Gold for current day */
+  color: #000;
+  font-weight: bold;
+  /* border-radius: 30%; Circular highlight */
+  /* box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); */
+}
