@@ -8,7 +8,7 @@ const auth = async (req, res, next) => {
       req.body?.token ||
       req.header("token") ||
       req.cookies?.token;
-      
+            
     if (!token) {
       return res.status(401).json({
         success: false,
@@ -44,8 +44,8 @@ const auth = async (req, res, next) => {
 
 const checkAccountType = (expectedAccountType) => async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.id).select("accountType");
-
+    const user = await User.findById(req.user.id).select("role");
+    
     if (!user) {
       return res.status(404).json({
         success: false,
@@ -53,7 +53,8 @@ const checkAccountType = (expectedAccountType) => async (req, res, next) => {
       });
     }
 
-    if (user.accountType === expectedAccountType) {
+    
+    if (user.role === expectedAccountType) {
       return next();
     } else {
       return res.status(403).json({
