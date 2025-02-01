@@ -6,11 +6,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
       lowercase: true,
+      trim: true,
     },
     lastname: {
       type: String,
       required: true,
       lowercase: true,
+      trim: true,
     },
     email: {
       type: String,
@@ -19,9 +21,13 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true,
     },
+    image: {
+      type: String,
+    },
     password: {
       type: String,
       required: true,
+      trim: true,
     },
     role: {
       type: String,
@@ -31,6 +37,7 @@ const userSchema = new Schema(
     phoneNumber: {
       type: String,
       required: true,
+      trim: true,
       trim: true,
     },
     address: {
@@ -52,6 +59,12 @@ const userSchema = new Schema(
         ref: "Candidate",
       },
     ],
+    token: {
+      type: String,
+    },
+    resetPasswordExpires: {
+      type: Date,
+    },
   },
   { timestamps: true }
 );
