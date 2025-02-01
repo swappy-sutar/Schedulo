@@ -1,61 +1,72 @@
 import mongoose, { Schema } from "mongoose";
 
-const candidateSchema = new Schema({
-  firstname: {
-    type: String,
-    required: true,
-  },
-  lastname: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
-  address:{
-    type: String,
-  },
-  phoneNumber: {
-    type: String,
-    required: true,
-  },
-  currentJobRole: {
-    type: String,
-    required: true,
-  },
-  currentCompany:{
-    type:String,
-  },
-  experience: {
-    type: String,
-  },
-  skills: [{
+const candidateSchema = new Schema(
+  {
+    firstname: {
       type: String,
-    },],
-  client: {
-    type: Schema.Types.ObjectId,
-    ref: "Client",
+      required: true,
+      trim: true,
+    },
+    lastname: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+    },
+    address: {
+      type: String,
+      trim: true,
+    },
+    phoneNumber: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    currentJobRole: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    currentCompany: {
+      type: String,
+      trim: true,
+    },
+    experience: {
+      type: String,
+      trim: true,
+    },
+    skills: [
+      {
+        type: String,
+      },
+    ],
+    client: {
+      type: Schema.Types.ObjectId,
+      ref: "Client",
+    },
+    currentCTC: {
+      type: Number,
+    },
+    expectedCTC: {
+      type: Number,
+    },
+    NoticePeriod: {
+      type: String, //in days
+    },
+    status: {
+      type: String,
+      enum: ["Placed", "Rejected", "Hold"],
+      default: "hold",
+    },
   },
-  currentCTC: {
-    type: Number,
-  },
-  expectedCTC: {
-    type: Number,
-  },
-  NoticePeriod:{
-    type:String,
-  },
-  status: {
-    type: String,
-    enum: ["placed", "rejected", "hold"],
-    default: "hold",
-  },
-},{
+  {
     timestamps: true,
-});
+  }
+);
 
 export const Candidate = mongoose.model("Candidate", candidateSchema);
