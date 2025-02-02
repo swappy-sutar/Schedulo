@@ -12,11 +12,6 @@ const clientSchema = new Schema(
       required: true,
       trim: true,
     },
-    companyBudget: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     jobRequirements: [
       {
         type: mongoose.Schema.Types.ObjectId,

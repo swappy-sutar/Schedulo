@@ -7,7 +7,7 @@ const createClient = async (req, res) => {
     const {
       companyName,
       companyLocation,
-      companyBudget,
+      
       hrName,
       hrEmail,
       HrPhoneNumber,
@@ -19,7 +19,6 @@ const createClient = async (req, res) => {
     if (
       !companyName ||
       !companyLocation ||
-      !companyBudget ||
       !hrName ||
       !hrEmail ||
       !HrPhoneNumber ||
@@ -40,8 +39,6 @@ const createClient = async (req, res) => {
     const newClient = await Client.create({
       companyName,
       companyLocation,
-      companyBudget,
-
       hrName,
       hrEmail,
       HrPhoneNumber,
@@ -63,7 +60,6 @@ const createClient = async (req, res) => {
         id: newClient.id,
         companyName: newClient.companyName,
         companyLocation: newClient.companyLocation,
-        companyBudget: newClient.companyBudget,
         hrName: newClient.hrName,
         hrEmail: newClient.hrEmail,
         HrPhoneNumber: newClient.HrPhoneNumber,
@@ -118,7 +114,6 @@ const updateClient = async (req, res) => {
       clientId,
       companyName,
       companyLocation,
-      companyBudget,
       jobRequirement,
       hrName,
       hrEmail,
@@ -144,7 +139,6 @@ const updateClient = async (req, res) => {
     if (
       !companyName &&
       !companyLocation &&
-      !companyBudget &&
       !jobRequirement &&
       !hrName &&
       !hrEmail &&
@@ -178,7 +172,6 @@ const updateClient = async (req, res) => {
 
     if (companyName) client.companyName = companyName;
     if (companyLocation) client.companyLocation = companyLocation;
-    if (companyBudget) client.companyBudget = companyBudget;
     if (jobRequirement) client.jobRequirements = jobRequirement;
     if (hrName) client.hrName = hrName;
     if (hrEmail) client.hrEmail = hrEmail;
@@ -216,7 +209,7 @@ const updateClient = async (req, res) => {
 
 const deleteClient = async (req, res) => {
   try {
-    const {clientId} = req.body;
+    const clientId = req.body;
 
     const client = await Client.findById(clientId);
     if (!client) {
