@@ -61,7 +61,7 @@ const candidateSchema = new Schema(
     status: {
       type: String,
       enum: ["Placed", "Rejected", "Hold"],
-      default: "hold",
+      default: "Hold",
     },
   },
   {
