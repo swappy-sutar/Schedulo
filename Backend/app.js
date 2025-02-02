@@ -23,10 +23,13 @@ app.get('/', (req, res) => {
 })
 
 import userRoutes from './Routes/user.routes.js';
-import timeslotRoutes from './Routes/timeslot.routes.js';
+import adminRoutes from "./Routes/admin.routes.js"
+import hrRoutes from "./Routes/hr.routes.js";
+
 
 app.use('/api/v1/user', userRoutes);
-app.use("/api/v1/schedule", timeslotRoutes);
+app.use("/api/v1/admin", adminRoutes);
+app.use("/api/v1/hr", hrRoutes);
 
 
 export {app};
