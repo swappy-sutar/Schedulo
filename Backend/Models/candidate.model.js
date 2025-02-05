@@ -55,7 +55,7 @@ const candidateSchema = new Schema(
     expectedCTC: {
       type: Number,
     },
-    NoticePeriod: {
+    noticePeriod: {
       type: String, //in days
     },
     findOn: {
