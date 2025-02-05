@@ -58,6 +58,10 @@ const candidateSchema = new Schema(
     NoticePeriod: {
       type: String, //in days
     },
+    findOn: {
+      type: String,
+      enum: ["LinkedIn", "naukri", "Indeed", "JobHai", "Other"],
+    },
     status: {
       type: String,
       enum: ["Placed", "Rejected", "Hold"],
