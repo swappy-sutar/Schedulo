@@ -60,8 +60,8 @@ const candidateSchema = new Schema(
     },
     findOn: {
       type: String,
-      enum: ["LinkedIn", "naukri", "Indeed", "JobHai", "Other"],
-    },
+      enum: ["LinkedIn", "Naukri", "Indeed", "JobHai", "Other"],
+    },  
     status: {
       type: String,
       enum: ["Placed", "Rejected", "Hold"],
