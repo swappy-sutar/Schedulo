@@ -58,6 +58,7 @@ const createUser = async (req, res) => {
       salary,
       password: hashedPassword,
       employeeId,
+      image: `http://api.dicebear.com/5.x/initials/svg?seed=${firstname} ${lastname}`,
     });
 
     return res.status(201).json({
@@ -196,4 +197,4 @@ const changePassword = async (req, res) => {
 };
 
 
-export { createUser, loginUser, changePassword };
+export { createUser, loginUser, changePassword, };
