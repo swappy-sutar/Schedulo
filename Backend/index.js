@@ -4,11 +4,16 @@ import { app } from "./app.js";
 
 dotenv.config();
 
+// Ensure database connection before handling requests
 export default async function handler(req, res) {
   try {
-    await dbConnection();
-    return app(req, res); 
+    if (!global.dbConnected) {
+      await dbConnection();
+      global.dbConnected = true;
+    }
+    return app(req, res); // Pass request to Express
   } catch (error) {
+    console.error("Server Error:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 }
